@@ -147,7 +147,7 @@ namespace Lab5
                     sum += matrix[i, i];
                 }
             }
-            
+
             // end
 
             return sum;
@@ -225,7 +225,7 @@ namespace Lab5
                     }
                 }
             }
-            
+
             // end
 
             return negatives;
@@ -315,7 +315,7 @@ namespace Lab5
                     }
                 }
             }
-            
+
             // end
 
         }
@@ -369,7 +369,7 @@ namespace Lab5
                     {
                         if (matrix[i, j] == 0)
                         {
-                            zero = true; 
+                            zero = true;
                             break;
                         }
                     }
@@ -383,9 +383,9 @@ namespace Lab5
                     }
                 }
             }
-                // end
+            // end
 
-                return answer;
+            return answer;
         }
         public void Task12(int[][] array)
         {
