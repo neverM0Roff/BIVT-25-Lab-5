@@ -17,24 +17,21 @@ namespace Lab5
             int count = 0;
             for (int i = 0; i < rows; i++)
             {
-                for(int j = 0; j < columns; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     if (matrix[i, j] > 0)
                     {
                         sum += matrix[i, j];
                         count++;
                     }
-                    
+
                 }
             }
             if (count == 0)
             {
-                average = 0;
+                return 0;
             }
-            else 
-            { 
-                average = sum / count;
-            }
+            average = sum / count;
             // end
 
             return average;
@@ -46,7 +43,7 @@ namespace Lab5
             // code here
             int rows = matrix.GetLength(0);
             int columns = matrix.GetLength(1);
-            int Min = int.MaxValue;
+            int Min = matrix[0, 0];
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
@@ -56,9 +53,11 @@ namespace Lab5
                         Min = matrix[i, j];
                         row = i;
                         col = j;
+
                     }
                 }
             }
+
             // end
 
             return (row, col);
@@ -91,10 +90,9 @@ namespace Lab5
                     }
                 }
             }
-            
-            // end
-
         }
+        // end
+
         public int[,] Task4(int[,] matrix)
         {
             int[,] answer = null;
@@ -211,18 +209,19 @@ namespace Lab5
                     }
                 }
             }
-            if (neg != 0)
+            if (neg == 0)
             {
-                negatives = new int[neg];
-                for (int i = 0; i < rows; i++)
+                return null;
+            }
+            negatives = new int[neg];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < column; j++)
                 {
-                    for (int j = 0; j < column; j++)
+                    if (matrix[i, j] < 0)
                     {
-                        if (matrix[i, j] < 0)
-                        {
-                            negatives[k] = matrix[i, j];
-                            k++;
-                        }
+                        negatives[k] = matrix[i, j];
+                        k++;
                     }
                 }
             }
